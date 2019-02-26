@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>weather</title>
+</head>
+<body>
+	<center>
+		<label for="weather"><h1>Selector the weather type today</h1>
+		</label>
+	
+	<select id="weather">
+		<option value=""> -- Make a choice --</option>
+		<option value="sunny"> Sunny </option>
+		<option value="rainy"> Rainy </option>
+		<option value="snowing"> Snowing</option>
+		<option value="overcast"> Overcast </option>
+	</select>
+
+	</center>
+	<p></p>
+	<script type="text/javascript">
+		var select= document.querySelector('select');
+		var para = document.querySelector('p');
+
+		select.addEventListener('change',setweather);
+		function setweather(){
+			var choice = select.value;
+
+			if(choice=='sunny')
+			{
+				para.textContent =" It's Sunny !!";
+			}
+			else if(choice=="rainy")
+			{
+				para.textContent=" Rainy !! Feels good ";
+			}
+			else if(choice == "snowing")
+			{
+				para.textContent=" Snowing ! Yeah ";
+			}
+			else if(choice =="overcast")
+			{
+				para.textContent =" It's not Raining ";
+			}
+			else{
+				para.textContent=" ** ";
+			}
+		}
+	</script>
+
+</body>
+</html>
