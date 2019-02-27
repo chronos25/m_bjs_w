@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calender</title>
+</head>
+<body>
+	<center>
+		<h2><label for="Calender">Calender</label></h2>
+		<select id="Calender">
+			<option value=""> --- select --- </option>
+			<option value="January">January</option>
+			<option value="February">February</option>
+			<option value="March">March</option>
+			<option value="April">April</option>
+			<option value="May">May</option>
+			<option value="June">June</option>
+			<option value="July">July</option>
+			<option value="August">August</option>
+			<option value="September">September</option>
+			<option value="October">October</option>
+			<option value="November">November</option>
+     		<option value="December">December</option>
+		</select> 
+	</center>
+
+		<h1></h1>
+		<h3></h3>
+		<ul style="background-color: blue, width=8px,height=8px;"></ul>
+	<script type="text/javascript">
+		var select=document.querySelector('select');
+		var list=document.querySelector('ul');
+		var h=document.querySelector('h1');
+		var h3=document.querySelector('h3');
+
+		select.onchange=function () {
+			var mon=select.value;
+			var days=30;
+			if(mon=="February")
+			{
+				days=28;
+			}
+			else if(mon==="January" || mon==="March" || mon==="May" || mon==="July" || mon==="August" || mon==="October" || mon==="December")
+			{
+				days=31;
+			}
+			 
+			createcalender(days,mon);
+		}
+		function createcalender(days,mon){
+			list.innerHtml='';
+			h.textContent=mon;
+			var d=new Date();
+			h3.textContent=d;
+			var color="#f3b404de",wid="6%",hei="5%",l="3px" ;
+			for(var i=1;i<=days;i++)
+			{
+				var listItem=document.createElement('button');
+				listItem.textContent=i;
+				listItem.style.backgroundColor=color;
+				listItem.style.width=wid; 
+				listItem.style.height=hei;
+				listItem.style.margin=l;
+				list.appendChild(listItem);
+			}
+		}
+	</script>
+</body>
+</html>
