@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Theme</title>
+</head>
+<body>
+	<center>
+		<label for="Theme">
+			Select Theme
+		</label>
+	
+		<select id="Theme">
+			<option value=""> -- Select Theme -- </option>
+			<option value="black">Black</option>
+			<option value="white">White</option>
+			<option value="purple">Purple</option>
+			<option value="yellow">Yellow</option>
+		</select>
+	</center>
+
+	<script type="text/javascript">
+		var select= document.querySelector('select');
+		var html= document.querySelector('html');
+		document.body.style.padding="10px";
+
+		function update(bgColor,textcolor){
+			html.style.backgroundColor=bgColor;
+			html.style.color=textcolor;
+		}
+
+		select.onchange = function(){
+		/*		( select.value ==='black') ? update('black','white'):update('white','black');*/
+		var ch=select.value;
+		if(ch==="black")
+			{update('black','white');}
+		else if(ch==="white")
+			{update('white','black');}
+		else if(ch==="yellow")
+			{update('yellow','black');}
+		else if(ch==="purple")
+			{
+				update('purple','white');
+			}
+		}
+	</script>
+</body>
+</html>
